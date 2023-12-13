@@ -12,7 +12,7 @@ import { cartList } from './cartList.service';
 export class CartListComponent implements OnInit {
   isLoading: boolean = false;
 
-  constructor(private totalCart: cartList, private authService:AuthService, private https:HttpClient, private route: Router){}
+  constructor(private totalCart: cartList, private authService:AuthService, private http:HttpClient, private route: Router){}
 
   foodAddedToCart:any;
 
@@ -55,7 +55,7 @@ export class CartListComponent implements OnInit {
     formData.append('itemCart',JSON.stringify(myOrder));
     formData.append('emailId',this.authService.email);
 
-    this.https.post('https://34.16.11.211:80/user/orderCartItems',formData).subscribe(response=>{
+    this.http.post('http://34.16.11.211:80/user/orderCartItems',formData).subscribe(response=>{
       console.log(response);
       if(response.hasOwnProperty('status')){
         console.log("checking out...");

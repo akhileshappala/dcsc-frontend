@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 })
 export class foodList {
 
-    constructor(private https: HttpClient){}
+    constructor(private http: HttpClient){}
 
     private foodsr :any = [
         {
@@ -55,7 +55,7 @@ export class foodList {
 
     getList(){
         console.log("getting food...")
-        return this.https.get('https://34.16.11.211:80/user/listFoodItems')
+        return this.http.get('http://34.16.11.211:80/user/listFoodItems')
         // return this.foodsr.slice();
     }
 
