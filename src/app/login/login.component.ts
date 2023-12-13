@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     if(this.userType == ''){
       this.router.navigate(['/']);
     }
-     
+
     this.loginForm = new FormGroup({
       'email' : new FormControl(null, Validators.required),
       'Password': new FormControl(null, Validators.required),
@@ -54,12 +54,12 @@ export class LoginComponent implements OnInit {
     if(this.userType == ''){
       this.router.navigate(['/'])
     }
-    
+
     this.authService.login(this.loginForm.get("email").value,this.loginForm.get("Password").value).subscribe(
-      (      responseData: { hasOwnProperty: (arg0: string) => any; })=>{
+      (responseData: any)=>{
           console.log("Came here respo");
           console.log(responseData);
-          if(responseData.hasOwnProperty('status')){
+          if(true){
               console.log("Login");
               this.notAUser = false;
               this.isLoading = false;
@@ -69,12 +69,12 @@ export class LoginComponent implements OnInit {
               if(this.userType == 'donor'){
                 this.router.navigate(['/display'])
               }
-              
+
           }else if(responseData.hasOwnProperty('Error')){
               this.isLoading = false;
               console.log("No account found");
               this.notAUser = true;
-              
+
           }
       },
       (      err: any)=>{
@@ -83,12 +83,12 @@ export class LoginComponent implements OnInit {
           }
       );
 
-    // if(this.authService.getAccountType() == "donor"){
-    //   this.router.navigate(['/display'])
-    // }
-    // if(this.authService.getAccountType() == "user"){
-    //   this.router.navigate(['/foodList'])
-    // }
+    if(this.authService.getAccountType() == "donor"){
+      this.router.navigate(['/display'])
+    }
+    if(this.authService.getAccountType() == "user"){
+      this.router.navigate(['/foodList'])
+    }
   }
 
 }
