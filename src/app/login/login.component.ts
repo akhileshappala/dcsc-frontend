@@ -20,7 +20,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private http: HttpClient){}
+  constructor(private authService: AuthService, private router: Router, private https: HttpClient){}
 
   loginForm: FormGroup;
 

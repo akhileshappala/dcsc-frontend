@@ -39,7 +39,7 @@ export class UploadscreenComponent implements OnInit {
     });
   }
 
-  constructor(private route: Router, private router:ActivatedRoute, private http: HttpClient, private authService: AuthService){}
+  constructor(private route: Router, private router:ActivatedRoute, private https: HttpClient, private authService: AuthService){}
 
   onSubmit(){
     this.isLoading = true;
@@ -106,8 +106,8 @@ export class UploadscreenComponent implements OnInit {
         formData.append('quantity', quantity);
 
 
-        this.http.post(
-            'http://34.41.204.34:80/donor/addFoodItem',
+        this.https.post(
+            'https://34.41.204.34:80/donor/addFoodItem',
             formData
         ).subscribe(
           (      responseData: { hasOwnProperty: (arg0: string) => any; })=>{
