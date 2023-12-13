@@ -16,7 +16,7 @@ export class DonarRegistrationPageComponent implements OnInit {
   notAUser: boolean = true;
   isLoading: boolean = false;
 
-  constructor(private https: HttpClient, private router: Router){};
+  constructor(private http: HttpClient, private router: Router){};
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -54,7 +54,7 @@ export class DonarRegistrationPageComponent implements OnInit {
         formData.append('address', this.user.address);
         formData.append('pincode', this.user.password);
 
-        return this.https.post(
+        return this.http.post(
             // 'http://localhost:8082/donor/createDonor',
             'http://34.41.204.34:80/donor/createDonor',
             formData

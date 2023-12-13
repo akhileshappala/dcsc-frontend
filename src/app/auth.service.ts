@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class AuthService{
 
-    constructor(private https: HttpClient){}
+    constructor(private http: HttpClient){}
 
     accountType: string = "";
 
@@ -46,16 +46,16 @@ export class AuthService{
         console.log("Your",email,password, data);
 
         if(this.accountType == "user"){
-            return this.https.post(
+            return this.http.post(
                 // 'http://localhost:5001/user/loginUser',
-                'https://34.16.11.211:80/user/loginUser',
+                'http://34.16.11.211:80/user/loginUser',
                 formData
             );
 
         }
         if(this.accountType == "donor"){
-            return this.https.post(
-                'https://34.41.204.34:80/donor/loginDonor',
+            return this.http.post(
+                'http://34.41.204.34:80/donor/loginDonor',
                 formData
             );
         }
@@ -71,9 +71,9 @@ export class AuthService{
         console.log(details);
         console.log("came here 1234");
 
-        return this.https.post(
+        return this.http.post(
             // 'http://localhost:5001/user/createUser',
-            'https://34.16.11.211:80/user/createUser',
+            'http://34.16.11.211:80/user/createUser',
             formData
         );
     }
