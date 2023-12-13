@@ -48,14 +48,14 @@ export class AuthService{
         if(this.accountType == "user"){
             return this.http.post(
                 // 'http://localhost:5001/user/loginUser',
-                'http://35.226.58.225:80/user/loginUser',
+                'http://34.16.11.211:80/user/loginUser',
                 formData
             );
 
         }
         if(this.accountType == "donor"){
             return this.http.post(
-                'http://35.239.176.172:80/donor/loginDonor',
+                'http://34.41.204.34:80/donor/loginDonor',
                 formData
             );
         }
@@ -73,7 +73,7 @@ export class AuthService{
 
         return this.http.post(
             // 'http://localhost:5001/user/createUser',
-            'http://35.226.58.225:80/user/createUser',
+            'http://34.16.11.211:80/user/createUser',
             formData
         );
     }

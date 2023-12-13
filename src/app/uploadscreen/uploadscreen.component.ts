@@ -107,7 +107,7 @@ export class UploadscreenComponent implements OnInit {
 
 
         this.http.post(
-            'http://35.239.176.172:80/donor/addFoodItem',
+            'http://34.41.204.34:80/donor/addFoodItem',
             formData
         ).subscribe(
           (      responseData: { hasOwnProperty: (arg0: string) => any; })=>{

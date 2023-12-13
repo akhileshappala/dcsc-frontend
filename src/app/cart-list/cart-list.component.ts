@@ -55,7 +55,7 @@ export class CartListComponent implements OnInit {
     formData.append('itemCart',JSON.stringify(myOrder));
     formData.append('emailId',this.authService.email);
 
-    this.http.post('http://35.226.58.225:80/user/orderCartItems',formData).subscribe(response=>{
+    this.http.post('http://34.16.11.211:80/user/orderCartItems',formData).subscribe(response=>{
       console.log(response);
       if(response.hasOwnProperty('status')){
         console.log("checking out...");

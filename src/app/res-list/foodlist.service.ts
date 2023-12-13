@@ -55,7 +55,7 @@ export class foodList {
 
     getList(){
         console.log("getting food...")
-        return this.http.get('http://35.226.58.225:80/user/listFoodItems')
+        return this.http.get('http://34.16.11.211:80/user/listFoodItems')
         // return this.foodsr.slice();
     }
 
